@@ -51,10 +51,7 @@ class HtmlContainer(BaseModel):
         if html is None:
             return {"name": "", "children": {}}
 
-        if isinstance(html, str):
-            soup = BeautifulSoup(html, "html.parser")
-        else:
-            soup = html
+        soup = BeautifulSoup(html, "html.parser") if isinstance(html, str) else html
 
         # First identify container by type and id
         if soup.name == container_type:  # E.g. "form", "select", "ul"...

@@ -1,11 +1,10 @@
 import json
-from typing import Optional
 
 from bs4 import BeautifulSoup
 from pyquery import PyQuery as pq
 from requests import Response
 
-from src.http_session.http_session import HTTPMethod, HTTPSession
+from src.completescraper.http_session.http_session import HTTPMethod, HTTPSession
 
 
 class TestHTTPSessionRequests:
@@ -17,7 +16,7 @@ class TestHTTPSessionRequests:
         self,
         json_response: dict,
         method: HTTPMethod,
-        response: Optional[Response] = None,
+        response: Response | None = None,
     ) -> None:
         assert response is None or response.status_code == 200
         assert isinstance(json_response, dict)

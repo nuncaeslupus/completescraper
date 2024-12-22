@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "completescraper"
+version = "0.1.0"
+authors = [{ "name" = "nuncaeslupus" }]
+description = "A complete and easy to use web scraping library"
+readme = "README.md"
+requires-python = ">=3.10.2"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "beautifulsoup4==4.12.3",
+    "pyquery==2.0.1",
+    "pytest==8.3.3",
+    "requests==2.32.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/nuncaeslupus/completescraper"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/completescraper"]
+
+[tool.ruff]
+line-length = 89
+indent-width = 4
+
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I",   # isort
+]
+
+# Disable fix for unused imports (`F401`).
+unfixable = ["F401"]
+
+# Add the `line-too-long` rule to the enforced rule set.
+extend-select = ["E501"]
+
+
+[tool.ruff.format]
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+docstring-code-format = true
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 120 # E501 reports lines that exceed this length.
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

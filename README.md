@@ -1,7 +1,7 @@
 # completescraper
 
 [![PyPI](https://img.shields.io/pypi/v/completescraper)](https://pypi.org/project/completescraper/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/nuncaeslupus/completescraper/blob/main/LICENSE)
 
 **A small Python library for scraping HTML sites with `requests`, BeautifulSoup and PyQuery.**
 
@@ -109,4 +109,4 @@ python -m pytest            # run from the repository root
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](https://github.com/nuncaeslupus/completescraper/blob/main/LICENSE).
